@@ -50,6 +50,8 @@ cacheSolve <- function(x, ...) {
             message("getting cached data")
                 return(inv)
         }
+        ### if inv is NULL, then calculate inverse matrix and
+        ### return that matrix.
         data <- x$get()
         inv <- solve(data, ...)
         x$setinv(inv)
